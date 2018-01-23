@@ -68,7 +68,7 @@ Sonunda, "Gruplanmış" ve "Gelişmiş" onaylarını kontrol edin.
 * ``BUILD_TESTS``
 * ``BUILD_opencv_python``
 
-`` CMAKE`` grubunda, `` CMAKE_BUILD_TYPE`` `` Debug`` (veya `` Release``) olarak ayarlayın
+``CMAKE`` grubunda, ``CMAKE_BUILD_TYPE`` ``Debug`` (veya ``Release``) olarak ayarlayın
 
 ``JAVA`` grubu:
 
@@ -78,11 +78,11 @@ Sonunda, "Gruplanmış" ve "Gelişmiş" onaylarını kontrol edin.
 * alternatif Java  yolunu ekleyin (örnek, ``/usr/lib/jvm/java-1.8.0/include/linux``)
 * JVM kütüphane yolunu ekleyin (örnek, ``/usr/lib/jvm/java-1.8.0/include/jni.h``)
 
-"Configure" a iki kez basın ve CMake penceresi beyaz bir arka planla görünmelidir. Değilse, kırmızı çizgileri düzeltip tekrar `` Configure '' düğmesine basın. Şimdi, `` Generate '' e basın ve CMake'i kapatın.
+"Configure" a iki kez basın ve CMake penceresi beyaz bir arka planla görünmelidir. Değilse, kırmızı çizgileri düzeltip tekrar ``Configure'' düğmesine basın. Şimdi, ``Generate'' e basın ve CMake'i kapatın.
 .. image:: _static/01 - 01.png
 
-Şimdi terminali açın, OpenCV'nin `` build`` klasörüne gidin ve her şeyi `` make -j`` komutu ile derleyin. `-j` parametresi, izin verilen maksimum iş parçacıkları sayısıyla paralel olarak çalıştırılmasını sağlar, bu da yapıyı teorik olarak daha hızlı hale getirir. Şimdi sürecin tamamlanmasını bekleyin...
-Her şey yolunda giderse, `` / opencv / build / bin`` dizininde `` opencv-3xx.jar`` ve `` / opencv / build / lib`` dizininde `` libopencv_java3xx.so`` olmalıdır. . Her dosyanın '3xx' soneki, geçerli OpenCV sürümü için bir kısayoltur, örneğin, OpenCV 3.0 için '300' ve OpenCV 3.3 için '330' olacaktır. İhtiyacınız olan her şey budur.
+Şimdi terminali açın, OpenCV'nin ` build`` klasörüne gidin ve her şeyi `` make -j`` komutu ile derleyin. `-j` parametresi, izin verilen maksimum iş parçacıkları sayısıyla paralel olarak çalıştırılmasını sağlar, bu da yapıyı teorik olarak daha hızlı hale getirir. Şimdi sürecin tamamlanmasını bekleyin...
+Her şey yolunda giderse, ``/opencv/build/bin`` dizininde `` opencv-3xx.jar`` ve ``/opencv/build/lib`` dizininde `` libopencv_java3xx.so`` olmalıdır. . Her dosyanın '3xx' soneki, geçerli OpenCV sürümü için bir kısayoltur, örneğin, OpenCV 3.0 için '300' ve OpenCV 3.3 için '330' olacaktır. İhtiyacınız olan her şey budur.
 
 Eclipse'de Java için OpenCV Kurma
 ----------------------------------
@@ -90,18 +90,18 @@ Eclipse'i açın ve istediğiniz çalışma alanını seçin. Bir sonraki projel
 
 .. image:: _static/01 - 02.png
 
-Menünün altından gidin ``Java > Build Path > User Libraries`` and choose ``New...``.
+Menünün altından gidin ``Java > Build Path > User Libraries`` ve ``New...``.
 Kitaplık için bir ad girin (ör. Opencv) ve yeni oluşturulan kullanıcı kitaplığını seçin.
 Seçin ``Add External JARs...``, browse to select ``opencv-3xx.jar`` bilgisayardan seçin.
-Jar'ı ekledikten sonra, seçimi genişletin ``Native library location`` and press ``Edit...``.
+Jar'ı ekledikten sonra, ``Native library location`` ve ``Edit...``.
 
 .. image:: _static/01 - 03.png
 
 Seçin ``External Folder...`` ve OpenCV kütüphanesini içeren klasörü seçmek için göz atın (örnek, ``C:\opencv\build\java\x64``).
 
-MacOS için, * Homebrew olmadan OpenCV * yüklediyseniz, .so dosyası için .dylib uzantılı  bir bağlantı oluşturmanız gerekir. Örneğin, terminalden şunu yazın:
+MacOS için, * Homebrew olmadan OpenCV * yüklediyseniz, .so dosyası için .dylib uzantılı  bir bağlantı oluşturmanız gerekir. Örneğin, terminalden şunu yazabilirsiniz:
 ``ln -s libopencv_java300.so libopencv_java300.dylib``
 
 Diğer IDE'ler için OpenCV Kurulumu
 ---------------------------------------------------
-IntelliJ kullanıyorsanız, kütüphanein konumunu VM parametresi olarak vermeniz gerekir `` -Djava.library.path = /opencv build/lib`` ile belirtebilirsiniz.
+IntelliJ veya farklı bir IDE kullanıyorsanız, kütüphanein konumunu VM parametresi olarak vermeniz yeterlidir. ``-Djava.library.path = /opencv/build/lib`` ile belirtebilirsiniz. Örnek ``java -jar -Djava.library.path = /opencv/build/lib ornekuygulamam.jar``
